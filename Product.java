@@ -4,9 +4,9 @@ public class Product {
     private String supplierTaxID;
 
     public Product(int productCode, String productTypeDescription, String supplierTaxID){
-        this.productCode=productCode;
-        this.productTypeDescription=productTypeDescription;
-        this.supplierTaxID=supplierTaxID;
+        this.productCode = productCode;
+        this.productTypeDescription = productTypeDescription;
+        this.supplierTaxID = supplierTaxID;
     }
     
 }
