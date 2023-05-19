@@ -1,14 +1,14 @@
 public class Media {
-    private float pricePerSecondMorningZone;
-    private float pricePerSecondNoonZone;
-    private float pricePerSecondAfternoonZone;
-    private float pricePerSecondNightZone;
+    private float priceMorning;
+    private float priceNoon;
+    private float priceAfternoon;
+    private float priceNight;
 
-    public Media(float pricePerSecondMorningZone, float pricePerSecondNoonZone, float pricePerSecondAfternoonZone, float pricePerSecondNightZone){
-        this.pricePerSecondMorningZone=pricePerSecondMorningZone;
-        this.pricePerSecondNoonZone=pricePerSecondNoonZone;
-        this.pricePerSecondAfternoonZone=pricePerSecondAfternoonZone;
-        this.pricePerSecondNightZone=pricePerSecondNightZone;
+    public Media(float priceMorning, float priceNoon, float priceAfternoon, float priceNight){
+        this.priceMorning=priceMorning;
+        this.priceNoon=priceNoon;
+        this.priceAfternoon=priceAfternoon;
+        this.priceNight=priceNight;
 
     }
 }
