@@ -1,8 +1,8 @@
 public class Carrier{
-    private String afm;
+    private String carrierTaxID;
     private String name;
-    public Carrier(String afm, String name){
-        this.afm=afm;
+    public Carrier(String carrierTaxID, String name){
+        this.carrierTaxID=carrierTaxID;
         this.name=name;
     }
     
