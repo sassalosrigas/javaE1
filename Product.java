@@ -3,6 +3,6 @@ public class Product {
     private String description;
     private String supplierTaxID;
 
-    
+    public 
     
 }
