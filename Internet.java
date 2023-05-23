@@ -1,11 +1,15 @@
-public class Internet {
-    private float priceDay;
-    private float priceAuto;
-    private float pricePage;
 
-    public Internet(float priceDay, float priceAuto, float pricePage) {
-        this.priceDay = priceDay;
-        this.priceAuto = priceAuto;
-        this.pricePage = pricePage;
+class Internet extends AdType{
+    public float day,auto,extra;
+    public Internet(int adCode, String adTypeDescription, String carrierTaxID,float day,float auto,float extra){ 
+        super(adCode, adTypeDescription, carrierTaxID);
+        this.day=day;
+        this.auto=auto;
+        this.extra=extra;
     }
+
+        public String toString(){
+        return super.toString()+", "+day+", "+auto+", "+extra;
+    }
+
 }

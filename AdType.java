@@ -8,7 +8,9 @@ public class AdType {
         this.adTypeDescription = adTypeDescription;
         this.carrierTaxID = carrierTaxID;
     }
-
+    public String toString(){
+        return adCode+", "+adTypeDescription+", "+carrierTaxID;
+    }
 
 
 }
