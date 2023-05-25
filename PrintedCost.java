@@ -1,9 +1,9 @@
-public class PrintedMatter extends AdType{
+public class PrintedCost extends AdType{
     private float priceFirst;
     private float priceMid;
     private float priceLast;
 
-    public PrintedMatter(int adCode, String adTypeDescription, String carrierTaxID,float priceFirst, float priceMid, float priceLast) {
+    public PrintedCost(int adCode, String adTypeDescription, String carrierTaxID,float priceFirst, float priceMid, float priceLast) {
         super(adCode, adTypeDescription, carrierTaxID);
         this.priceFirst = priceFirst;
         this.priceMid = priceMid;

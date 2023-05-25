@@ -1,12 +1,12 @@
-class product extends Advertiser{
-    public String code;
-    
-    public product(String code,String name,String afm){
-        super(name,afm);
-        this.code=code;
-    }
+public class Product {
+    public int productcode;
+    private String productdescription;
+    private String supplierTaxID;
 
-    public String toString(){
-        return code+", "+super.toString();
+    public Product(int productcode, String productdescription, String supplierTaxID){
+        this.productcode=productcode;
+        this.productdescription=productdescription;
+        this.supplierTaxID=supplierTaxID;
     }
+    
 }

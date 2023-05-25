@@ -1,21 +1,13 @@
-public class Advertisment {
-    protected String type_code,product_code,explanation;
-    protected float days;
-    public double cost;
+public class Advertisment extends Product{//koina xarakthristika olwn twn diafhmisewn
+    protected String type_code;//1,2,3 kwdikos typou diafhmishs. entypo , radio, MME
+    protected String explanation;//help
+    protected int time;
 
-
-    public Advertisment(String type_code,String product_code,float days,String explanation){
+    public Advertisment(int productcode, String productdescription, String supplierTaxID, String type_code,int time,String explanation){
+        super(productcode, productdescription, supplierTaxID);
         this.type_code=type_code;
-        this.product_code=product_code;
-        this.days=days;
+        this.time=time;
         this.explanation=explanation;
     }
-    public String toString(){
-        return type_code+", "+product_code+", "+days+", "+explanation;
-    }
-
-
-
-
     
 }

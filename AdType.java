@@ -1,7 +1,7 @@
 public class AdType {
-    private int adCode;
-    private String adTypeDescription;
-    private String carrierTaxID; //klhronomei apo Carrier.class mallon???
+    private int adCode;//kwdikos diafhmishs
+    private String adTypeDescription;//efhmerida, periodiko etc
+    private String carrierTaxID;//afm
 
     public AdType(int adCode, String adTypeDescription, String carrierTaxID){
         this.adCode = adCode;
