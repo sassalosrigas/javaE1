@@ -6,5 +6,13 @@ public class Carrier{
         this.carrierTaxID = carrierTaxID;
         this.name = name;
     }
+
+    public String getCarrierTaxID() {
+        return carrierTaxID;
+    }
+
+    public String getName() {
+        return name;
+    }
     
 }

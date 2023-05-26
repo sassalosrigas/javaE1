@@ -8,5 +8,16 @@ public class Product{
         this.productdescription=productdescription;
         this.supplierTaxID=supplierTaxID;
     }
+    public int getProductcode() {
+        return productcode;
+    }
+
+    public String getProductdescription() {
+        return productdescription;
+    }
+
+    public String getSupplierTaxID() {
+        return supplierTaxID;
+    }
     
 }

@@ -1,11 +1,19 @@
 class Printed extends Advertisment{
     private String placement;
     private int wordNum;
+    private float priceFirst;
+    private float priceMid;
+    private float priceLast;
+    private float price;
 
-    public Printed(String type_code,int time,String explanation, int productcode, String placement, int wordNum){
+    public Printed(float priceFirst, float priceMid, float priceLast, String type_code,int time,String explanation, int productcode, String placement, int wordNum){
         super(type_code, time, explanation, productcode);
         this.placement=placement;
-        this.wordNum=wordNum;}
+        this.wordNum=wordNum;
+        this.priceFirst = priceFirst;
+        this.priceMid = priceMid;
+        this.priceLast = priceLast;
+    }
 
     public String getPlacement() {
         return placement;
@@ -22,10 +30,26 @@ class Printed extends Advertisment{
     public void setWordNum(int wordNum) {
         this.wordNum = wordNum;
     }
+    public void setPrice(float priceFirst, float priceMid, float priceLast, float price){
+        if (getPlacement().equals("first")){
+            price=priceFirst;
+        }
+        else if (getPlacement().equals("middle")){
+            price=priceMid;
+        }
+        else{
+            price=priceLast;
+        }
 
-    public double Cost(AdType printed){//ypologismos kostoys
-        double result = getWordNum()*printed.priceperword*getTime();
+    }
+    public float getPrice(){
+        return price;
+    }
+
+    public float Cost(){//ypologismos kostoys
+        float result = getWordNum()*getPrice()*super.getTime();
         return result;
+
     }
 
 }
