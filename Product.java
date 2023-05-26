@@ -1,4 +1,4 @@
-public class Product extends Advertisment{
+public class Product{
     public int productcode;
     private String productdescription;
     private String supplierTaxID;

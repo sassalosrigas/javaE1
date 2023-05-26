@@ -26,12 +26,6 @@ class Media extends Advertisment{
     }
 
 
-
-
-
-
-
-
     public double Cost(AdType media) {
         int cost = getDuration() * getPrice() * getTime();
         return cost;

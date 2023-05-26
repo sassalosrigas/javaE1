@@ -1,4 +1,4 @@
-public class AdType {
+public class AdType{
     private int adCode;//kwdikos diafhmishs
     private String adTypeDescription;//efhmerida, periodiko etc
     private String carrierTaxID;//afm
@@ -11,6 +11,9 @@ public class AdType {
     public String toString(){
         return adCode+", "+adTypeDescription+", "+carrierTaxID;
     }
+
+
+
 
 
 }
