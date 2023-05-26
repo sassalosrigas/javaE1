@@ -22,7 +22,6 @@ public class Internet extends Advertisment {
     }
     
     public double Cost(AdType internet){
-        
     }
     
 }
