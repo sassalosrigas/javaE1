@@ -1,23 +1,17 @@
-public class Product{
-    public int productcode;
-    private String productdescription;
-    private String supplierTaxID;
-
-    public Product(int productcode, String productdescription, String supplierTaxID){
-        this.productcode=productcode;
-        this.productdescription=productdescription;
-        this.supplierTaxID=supplierTaxID;
-    }
-    public int getProductcode() {
-        return productcode;
-    }
-
-    public String getProductdescription() {
-        return productdescription;
-    }
-
-    public String getSupplierTaxID() {
-        return supplierTaxID;
-    }
+class product extends carrier {
+    private String productCode;
     
+    public product(String productCode,String name,String carrierTaxID) {
+        super(name,carrierTaxID);
+        this.productCode=productCode;
+    }
+
+    public String toString() {
+        return "product productCode: "+productCode+", "+super.toString();
+    }
+
+    public String get_code() {
+        return productCode;
+    }
+
 }

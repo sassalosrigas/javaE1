@@ -1,55 +1,50 @@
-class Printed extends Advertisment{
-    private String placement;
-    private int wordNum;
-    private float priceFirst;
-    private float priceMid;
-    private float priceLast;
-    private float price;
+class printed extends AdType {
+    private float priceFirst,priceMid,priceLast;
 
-    public Printed(float priceFirst, float priceMid, float priceLast, String type_code,int time,String explanation, int productcode, String placement, int wordNum){
-        super(type_code, time, explanation, productcode);
-        this.placement=placement;
-        this.wordNum=wordNum;
-        this.priceFirst = priceFirst;
-        this.priceMid = priceMid;
-        this.priceLast = priceLast;
+
+    public printed(String code,String descr,String carrierTaxID,float priceFirst,float priceMid,float priceLast){ 
+        super(code,descr,carrierTaxID);
+        this.priceFirst=priceFirst;
+        this.priceMid=priceMid;
+        this.priceLast=priceLast;
+        type="printed";
     }
 
-    public String getPlacement() {
-        return placement;
+    public String toString(){
+        return super.toString()+", "+priceFirst+", "+priceMid+", "+priceLast;
     }
 
-    public void setPlacement(String placement) {
-        this.placement = placement;
-    }
 
-    public int getWordNum() {
-        return wordNum;
-    }
 
-    public void setWordNum(int wordNum) {
-        this.wordNum = wordNum;
-    }
-    public void setPrice(float priceFirst, float priceMid, float priceLast, float price){
-        if (getPlacement().equals("first")){
+    public double get_cost(int duration,int wordNum,String page){
+        float price=0;
+        if (page.equals("priceFirst")){
             price=priceFirst;
         }
-        else if (getPlacement().equals("middle")){
+        else if (page.equals("priceMid")){
             price=priceMid;
         }
         else{
             price=priceLast;
         }
 
-    }
-    public float getPrice(){
-        return price;
+        double cost=price*wordNum*duration; 
+        return cost;
     }
 
-    public float Cost(){//ypologismos kostoys
-        float result = getWordNum()*getPrice()*super.getTime();
-        return result;
 
-    }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 }

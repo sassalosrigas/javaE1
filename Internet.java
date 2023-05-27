@@ -1,69 +1,21 @@
-public class Internet extends Advertisment {
-    private boolean auto;
-    private int pageNum;
-    private float priceAuto;
-    private float priceDay;
-    private float pricePage;
-    private float priceExtra;
+class internet extends AdType {
+    public float priceDay,priceAuto,pricePage;
 
-    public Internet(boolean auto, int pageNum,float priceAuto, float priceDay, float pricePage, String type_code,int time,String explanation, int productcode){
-        super(type_code, time, explanation, productcode);
-        this.auto=auto;
-        this.pageNum=pageNum;
-        this.priceAuto=priceAuto;
+
+    public internet(String adCode,String descr,String carrierTaxID,float priceDay,float priceAuto,float pricePage){ 
+        super(adCode,descr,carrierTaxID);
         this.priceDay=priceDay;
+        this.priceAuto=priceAuto;
         this.pricePage=pricePage;
+        type="internet";
     }
 
-    public boolean getAuto() {
-        return auto;
-    }
-    public void setAuto(boolean auto) {
-        this.auto = auto;
-    }
-    public int getPageNum() {
-        return pageNum;
-    }
-    public void setPageNum(int pageNum) {
-        this.pageNum = pageNum;
-    }
-    public float getPriceAuto() {
-        return priceAuto;
-    }
-    public void setPriceAuto(float priceAuto) {
-        this.priceAuto = priceAuto;
-    }
-    public float getPriceDay() {
-        return priceDay;
-    }
-    public void setPriceDay(float priceDay) {
-        this.priceDay = priceDay;
-    }
-    public float getPricePage() {
-        return pricePage;
-    }
-    public void setPricePage(float pricePage) {
-        this.pricePage = pricePage;
-    }
-
-    public void setPrice(boolean auto,float priceAuto, float priceExtra){
-        if(auto){
-            priceExtra=priceAuto;
-
-        }else{
-            priceExtra=0;
-        }
-
-    }
-    public float getExtraPrice(){
-        return priceExtra;
-    }
-
-    
-
-    public float Cost(){
-        return getPriceDay()*super.getTime()+priceExtra+getPricePage(); //leipei kati to be continued
-        
+    public String toString() {
+        return super.toString()+", "+priceDay+", "+priceAuto+", "+pricePage;
     }
     
+    public double get_cost(int duration,int auto,int extra_pages) {
+        double cost=(priceDay+(priceAuto*auto)+(extra_pages*pricePage))*duration; 
+        return cost;
+    }
 }

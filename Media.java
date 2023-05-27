@@ -1,74 +1,75 @@
-class Media extends Advertisment{
-    private int duration;
-    private String timeZone;
-    private float priceNoon;
-    private float priceAfternoon;
-    private float priceMorning;
-    private float priceNight;
-    private float price;
+class media extends AdType{
+    private float priceMorning,priceNoon,priceAfternoon,priceNight;
 
-    public Media(int duration, String timeZone, float priceMorning, float priceNoon, float priceAfternoon, float priceNight, String type_code,int time,String explanation, int productcode){
-        super(type_code, time, explanation, productcode);
-        this.duration=duration;
-        this.timeZone=timeZone;
+
+    public media(String code,String descr,String carrierTaxID,float priceMorning,float priceNoon,float priceAfternoon,float priceNight){ 
+        super(code,descr,carrierTaxID);
+        this.priceMorning=priceMorning;
+        this.priceNoon=priceNoon;
+        this.priceAfternoon=priceAfternoon;
+        this.priceNight=priceNight;
+        type="media";
     }
 
-    public int getDuration() {
-        return duration;
-    }
-    public void setDuration(int duration) {
-        this.duration = duration;
-    }
-    public String getTimeZone() {
-        return timeZone;
-    }
-    public void setTimeZone(String timeZone) {
-        this.timeZone = timeZone;
-    }
-    public float getPriceNoon() {
-        return priceNoon;
-    }
-    public void setPriceNoon(float priceNoon) {
-        this.priceNoon = priceNoon;
-    }
-    public float getPriceAfternoon() {
-        return priceAfternoon;
-    }
-    public void setPriceAfternoon(float priceAfternoon) {
-        this.priceAfternoon = priceAfternoon;
-    }
-    public float getPriceMorning() {
-        return priceMorning;
-    }
-    public void setPriceMorning(float priceMorning) {
-        this.priceMorning = priceMorning;
-    }
-    public float getPriceNight() {
-        return priceNight;
-    }
-    public void setPriceNight(float priceNight) {
-        this.priceNight = priceNight;
+    public String toString(){
+        return super.toString()+", "+priceMorning+", "+priceNoon+", "+priceAfternoon+", "+priceNight;
     }
 
-    public void setPrice(String timeZone, float priceMorning, float priceNoon, float priceAfternoon, float priceNight){
-        if(getTimeZone().equals("morning")){
+
+    public double get_cost(int duration,int media_ad_duration,String time){
+        float price=0;
+        if (time.equals("morn")){
             price=priceMorning;
-        }else if(getTimeZone().equals("noon")){
-            price=priceNoon;
-        }else if(getTimeZone().equals("afternoon")){
-            price=priceAfternoon;
-        }else{
-            price=priceNight;
         }
- 
-    }
-    public float getPrice(){
-        return price;
-
-    }
-    public float Cost() {
-        float cost = getDuration() * getPrice() * super.getTime();
+        else if (time.equals("noon")){
+            price=priceNoon;
+        }
+        else if (time.equals("after")){
+            price=priceAfternoon;
+        }
+        else{
+            price=priceNight;
+        }        
+        double cost=price*duration*media_ad_duration; 
         return cost;
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    public double get_price(String time){
+        if (time.equals("morn")){
+            return priceMorning;
+        }
+        else if (time.equals("noon")){
+            return priceNoon;
+        }
+        else if (time.equals("after")){
+            return priceAfternoon;
+        }
+        else{
+            return priceNight;
+        }        
+    }
+
+
+
+
+
+
+
+
 
 }

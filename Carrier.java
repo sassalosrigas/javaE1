@@ -1,18 +1,12 @@
-public class Carrier{
-    private String carrierTaxID;
-    private String name;
+class carrier{
+    public String name,carrierTaxID;
     
-    public Carrier(String carrierTaxID, String name){
-        this.carrierTaxID = carrierTaxID;
-        this.name = name;
+    public carrier(String carrierTaxID,String name){
+        this.name=name;
+        this.carrierTaxID=carrierTaxID;
     }
 
-    public String getCarrierTaxID() {
-        return carrierTaxID;
+    public String toString(){
+        return "name: "+name+", carrierTaxID: "+carrierTaxID;
     }
-
-    public String getName() {
-        return name;
-    }
-    
 }
