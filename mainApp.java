@@ -117,7 +117,7 @@ import java.util.ArrayList;
 
         int res = input.nextInt();
 
-        do {
+        while(res!=10){
             if(res==1) {
                 System.out.println("Give carrierTaxID, name");
                 input.nextLine();
@@ -301,7 +301,7 @@ import java.util.ArrayList;
 
             res = input.nextInt();
 
-        } while(res!=10);
+        } 
             
     }
 }
